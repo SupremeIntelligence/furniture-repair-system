@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Система ремонта и реставрации мебели</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Система ремонта и реставрации мебели</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#order">Оформить заказ</a></li>
+        <li><a href="#orders">Мои заказы</a></li>
+        <li><a href="#login">Войти</a></li>
+        <li><a href="#error">Ошибка</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <h2>Добро пожаловать!</h2>
+      <p>
+        Это система ремонта и реставрации мебели. Здесь вы можете оформить заказ,
+        просмотреть свои заказы и следить за статусом ремонта.
+      </p>
+      <div class="buttons">
+        <a href="#order" class="button">Оформить заказ →</a>
+        <a href="#orders" class="button">Мои заказы →</a>
+      </div>
+    </section>
+
+    <!-- Оформить заказ -->
+    <section id="order" class="page">
+      <h2>Оформление заказа</h2>
+      <form>
+        <label>Тип мебели:</label>
+        <select required>
+          <option>Стул</option>
+          <option>Стол</option>
+          <option>Диван</option>
+          <option>Другое</option>
+        </select>
+
+        <label>Описание работ:</label>
+        <textarea placeholder="Опишите требуемый ремонт..." required></textarea>
+
+        <label>Способ доставки:</label>
+        <select>
+          <option>Самовывоз</option>
+          <option>Курьер</option>
+        </select>
+
+        <label>Способ оплаты:</label>
+        <select>
+          <option>Наличные</option>
+          <option>Банковский перевод</option>
+          <option>Карта</option>
+        </select>
+
+        <button type="submit" class="button">Отправить заказ</button>
+        <p class="note">Кнопка отправляет заказ в систему.</p>
+      </form>
+      <a href="#home" class="back">← На главную</a>
+    </section>
+
+<section id="orders" class="page">
+  <h2>Мои заказы</h2>
+
+  <div class="search-sort-container">
+    <input type="text" placeholder="Поиск по заказам..." class="search" />
+    <button class="sort-button">Сортировать</button>
+  </div>
+
+  <div class="order-list">
+    <div class="order-card">
+      <h3>Заказ №1 — Стул</h3>
+      <p>Статус: В ремонте</p>
+      <div class="actions">
+        <button>Обновить статус</button>
+        <button>Удалить</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <h3>Заказ №2 — Стол</h3>
+      <p>Статус: Ожидает оплаты</p>
+      <div class="actions">
+        <button>Обновить статус</button>
+        <button>Удалить</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">
+    Кнопка «Обновить статус» открывает окно изменения статуса заказа.
+  </p>
+  <a href="#home" class="back">← На главную</a>
+</section>
+
+    <section id="login" class="page">
+      <h2>Авторизация</h2>
+      <form>
+        <label for="username">Логин:</label>
+        <input type="text" id="username" name="username" placeholder="Введите логин">
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" placeholder="Введите пароль">
+
+        <button type="submit">Войти</button>
+      </form>
+      <a href="#home" class="back">← На главную</a>
+    </section>
+
+    <section id="error" class="page">
+      <h2>Ошибка</h2>
+      <p>Произошла ошибка. Заказ не найден или недоступен.</p>
+      <a href="#home" class="back">← На главную</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Система ремонта и реставрации мебели. Все права защищены.</p>
+  </footer>
+</body>
+</html>
