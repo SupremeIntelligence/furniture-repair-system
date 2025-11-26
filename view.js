@@ -4,7 +4,6 @@ export class FurnitureRepairView {
         this.loginForm = document.querySelector('#login form');
         this.orderForm = document.querySelector('#order form');
 
-        // Кнопка "Показать ещё"
         this.showMoreButton = document.createElement('button');
         this.showMoreButton.className = 'load-more';
         this.showMoreButton.textContent = 'Показать ещё';
@@ -98,5 +97,8 @@ export class FurnitureRepairView {
 
     clearOrderForm() {
         this.orderForm.reset();
+    }
+    setController(controller) {
+    this.controller = controller;
     }
 }

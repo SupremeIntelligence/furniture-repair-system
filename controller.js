@@ -38,6 +38,8 @@ this.view.loginForm.addEventListener('submit', e => {
     this.currentUser = username;
     window.currentUser = username;
 
+    localStorage.setItem('currentUser', username);
+
     // Меняем текст ссылки меню "Войти" на логин пользователя
     loginMenu.textContent = username;
 
@@ -174,4 +176,5 @@ document.querySelector('#registerModal .close').addEventListener('click', () => 
 
     this.view.renderOrders(orders, append);
 }
+
 }
