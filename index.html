@@ -8,17 +8,17 @@
 </head>
 <body>
   <header>
-    <script src="script.js" defer></script>
+    <script type="module" src="app.js" defer></script>
     <h1>Система ремонта и реставрации мебели</h1>
     <nav>
-      <ul>
-        <li><a href="#home">Главная</a></li>
-        <li><a href="#order">Оформить заказ</a></li>
-        <li><a href="#orders">Мои заказы</a></li>
-        <li><a href="#login">Войти</a></li>
-        <li><a href="#error">Ошибка</a></li>
-      </ul>
-    </nav>
+  <ul>
+    <li><a href="#home">Главная</a></li>
+    <li><a href="#order">Оформить заказ</a></li>
+    <li><a href="#orders">Мои заказы</a></li>
+    <li><a href="#login" id="loginMenu">Войти</a></li>
+    <li><a href="#error">Ошибка</a></li>
+  </ul>
+</nav>
   </header>
 
   <main>
@@ -34,7 +34,6 @@
       </div>
     </section>
 
-    <!-- Оформить заказ -->
     <section id="order" class="page">
       <h2>Оформление заказа</h2>
       <form>
@@ -68,6 +67,28 @@
       <a href="#home" class="back">← На главную</a>
     </section>
 
+<section id="edit" class="page">
+  <h2>Редактирование заказа</h2>
+  <form>
+    <input type="hidden" name="id">
+
+    <label>Статус:</label>
+    <select name="status">
+      <option>Новый</option>
+      <option>В ремонте</option>
+      <option>Выполнен</option>
+      <option>Отменён</option>
+    </select>
+
+    <label>Стоимость:</label>
+    <input type="number" name="cost" min="0">
+
+    <button type="submit">Сохранить</button>
+  </form>
+
+  <a href="#orders" class="back">← Назад</a>
+</section>
+
 <section id="orders" class="page">
   <h2>Мои заказы</h2>
 
@@ -77,23 +98,6 @@
   </div>
 
   <div class="order-list">
-    <div class="order-card">
-      <h3>Заказ №1 — Стул</h3>
-      <p>Статус: В ремонте</p>
-      <div class="actions">
-        <button>Обновить статус</button>
-        <button>Удалить</button>
-      </div>
-    </div>
-
-    <div class="order-card">
-      <h3>Заказ №2 — Стол</h3>
-      <p>Статус: Ожидает оплаты</p>
-      <div class="actions">
-        <button>Обновить статус</button>
-        <button>Удалить</button>
-      </div>
-    </div>
   </div>
 
   <p class="note">
@@ -103,18 +107,22 @@
 </section>
 
     <section id="login" class="page">
-      <h2>Авторизация</h2>
-      <form>
-        <label for="username">Логин:</label>
-        <input type="text" id="username" name="username" placeholder="Введите логин">
+  <h2>Авторизация</h2>
+  <form id="loginForm">
+    <label for="username">Логин:</label>
+    <input type="text" id="username" name="username" placeholder="Введите логин" required>
 
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" placeholder="Введите пароль">
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
 
-        <button type="submit">Войти</button>
-      </form>
-      <a href="#home" class="back">← На главную</a>
-    </section>
+    <div class="buttons">
+      <button type="submit">Войти</button>
+      <button type="button" id="showRegister">Регистрация</button>
+      <button type="button" id="logoutBtn" style="display:none;">Выйти</button>
+    </div>
+  </form>
+  <a href="#home" class="back">← На главную</a>
+</section>
 
     <section id="error" class="page">
       <h2>Ошибка</h2>
@@ -128,3 +136,53 @@
   </footer>
 </body>
 </html>
+<!-- Модальное окно редактирования заказа -->
+<div id="editModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Редактировать заказ</h2>
+    <form id="editForm">
+      <label>Тип мебели:</label>
+      <select name="furnitureType" required>
+        <option>Стул</option>
+        <option>Стол</option>
+        <option>Диван</option>
+        <option>Другое</option>
+      </select>
+
+      <label>Описание:</label>
+      <textarea name="description" required></textarea>
+
+      <label>Статус:</label>
+      <select name="status">
+        <option>Новый</option>
+        <option>В ремонте</option>
+        <option>Выполнен</option>
+      </select>
+
+      <label>Стоимость:</label>
+      <input type="number" name="cost" min="0" required>
+
+      <button type="submit">Сохранить</button>
+    </form>
+  </div>
+</div>
+<!-- Модальное окно регистрации -->
+<div id="registerModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Регистрация</h2>
+    <form id="registerForm">
+      <label>Логин:</label>
+      <input type="text" name="regUsername" required>
+
+      <label>Пароль:</label>
+      <input type="password" name="regPassword" required>
+
+      <label>Повторите пароль:</label>
+      <input type="password" name="regPassword2" required>
+
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
+</div>
