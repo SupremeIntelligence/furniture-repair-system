@@ -1,5 +1,49 @@
+# Furniture Repair System
+
+A prototype web application for a furniture repair and restoration system.  
+Allows users to place orders, track repair status, and manage them through an intuitive interface.
+
+## Features
+
+### Interface (HTML + CSS)
+- Home page  
+- Order submission form  
+- Order list view  
+- Error screen  
+- Login screen  
+- Unified `header` and `footer`  
+- Semantic HTML (`header`, `main`, `footer`, etc.)  
+- SPA navigation without page reloads  
+
+### Dynamic Functionality (JavaScript)
+- User authentication  
+- Viewing and filtering orders  
+- Pagination (10 items per page)  
+- Create, edit, and delete orders  
+- Data persistence using `localStorage`  
+- MVC architecture (Model / View / Controller)
+
+### Technologies
+- HTML5 — semantic markup  
+- CSS3 — styling and layout  
+- JavaScript (ES6+) — logic and event handling  
+- localStorage — persistent data storage  
+- MVC pattern — project structure
+
+### Project Goal
+To create a single-page web application that demonstrates:
+- UI development skills  
+- SPA design principles  
+- Event handling and browser storage usage  
+- MVC pattern implementation  
+- Interactive forms and controls  
+
+---
+
 # furniture-repair-system
-Прототип веб-сайта для системы ремонта и реставрации мебели. Позволяет оформлять заказы, отслеживать статус ремонта и управлять ими через удобный интерфейс.
+
+Прототип веб-сайта для системы ремонта и реставрации мебели.  
+Позволяет оформлять заказы, отслеживать статус ремонта и управлять ими через удобный интерфейс.
 
 ## Возможности прототипа
 
@@ -16,22 +60,22 @@
 ### Динамическая часть (JavaScript)
 - Авторизация пользователя  
 - Просмотр и фильтрация заказов  
-- Пагинация (загрузка по 10 элементов)  
+- Пагинация (10 элементов на странице)  
 - Создание, редактирование и удаление заказов  
 - Сохранение данных в `localStorage`  
 - MVC-архитектура (Model / View / Controller)
 
 ### Технологии
-- HTML5 — семантическая разметка
-- CSS3 — оформление интерфейса
-- JavaScript (ES6+) — логика и обработка событий
-- localStorage — хранение данных между перезагрузками
+- HTML5 — семантическая разметка  
+- CSS3 — оформление интерфейса  
+- JavaScript (ES6+) — логика и обработка событий  
+- localStorage — хранение данных между перезагрузками  
 - MVC-паттерн — структура проекта
 
 ### Цель проекта
 Создать одностраничное веб-приложение, которое демонстрирует:
-- навыки верстки интерфейсов
-- проектирование SPA
-- обработку событий и работу с браузерным хранилищем
-- применение шаблона MVC
-- создание интерактивных форм и элементов управления.
+- навыки верстки интерфейсов  
+- проектирование SPA  
+- обработку событий и работу с браузерным хранилищем  
+- применение шаблона MVC  
+- создание интерактивных форм и элементов управления
